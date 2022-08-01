@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper:是整个文件的标签，用来开始和结束xml文件
+    属性：namespace：指定命名空间（相当于包名）用来区分不同mapper.xml文件中的相同的id属性
+-->
+<mapper namespace="tt">
+    <!--完成查询全部学生的功能
+        resultType:指定查询返回的结果集类型名，如果是集合，则必须是泛型的类型
+        parameterType：如果有参数，则通过它来指定参数类型
+    -->
+    <select id="getAll" resultType="com.xinghao.pojo.Student">
+        select id,name,email,age
+        from student
+    </select>
+
+    <select id="getById" parameterType="int" resultType="com.xinghao.pojo.Student">
+        select id,name,email,age
+        from student
+        where id=#{id}
+    </select>
+
+    <select id="getByName" parameterType="string" resultType="com.xinghao.pojo.Student">
+        select id,name,email,age
+        from student
+        where name like '%${name}%'
+    </select>
+
+
+    <!--增加-->
+    <insert id="insert" parameterType="com.xinghao.pojo.Student">
+        insert into student (name,email,age) values(#{name},#{email},#{age})
+    </insert>
+    
+    <!--删除-->
+    <delete id="delete" parameterType="int">
+        delete from student where id = #{id}
+    </delete>
+
+    <!--更新-->
+    <update id="update" parameterType="student">
+        update student set name=#{name},email=#{email},age=#{age}
+        where id=#{id}
+    </update>
+</mapper>

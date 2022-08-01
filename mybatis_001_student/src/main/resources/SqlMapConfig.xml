@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--读取属性文件（jdbc.properties）-->
+    <properties resource="jdbc.properties"></properties>
+
+    <!--设置日志输出底层执行的代码-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <!--注册实体类别名 两种注册方式不能并存-->
+    <typeAliases>
+        <!--单个注册-->
+        <!--<typeAlias type="com.xinghao.pojo.Student" alias="student"></typeAlias>-->
+
+        <!--批量注册:别名是类名的驼峰命名法（规范）-->
+        <package name="com.xinghao.pojo"></package>
+    </typeAliases>
+
+    <!--配置数据库的环境变量（数据库连接配置）(可以设置多套)-->
+    <environments default="development">
+        <environment id="development">
+            <!--配置事务管理器，type：指定事务管理的方式（JDBC：事务控制由程序员处理；MANAGED：由Spring来管理事务）-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--配置数据源（JNDI：java明名接口，在服务器端进行数据库连接池的管理
+                          POOLED：使用数据库连接池
+                          UNPOOLED：不使用数据库连接池）-->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driverClassName}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+
+    </environments>
+
+    <!--注册mapper.xml文件-->
+    <!--resources:从resources目录下找指定名称的文件注册
+        url:使用绝对路径注册
+        class:动态代理方式下的注册
+    -->
+    <mappers>
+        <mapper resource="StudentMapper.xml"></mapper>
+    </mappers>
+
+</configuration>

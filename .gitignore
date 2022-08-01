@@ -1,0 +1,3 @@
+# Project exclude paths
+/mybatis_001_student/target/
+/mybatis_002_users/target/
