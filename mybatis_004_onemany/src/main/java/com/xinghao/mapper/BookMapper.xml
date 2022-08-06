@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinghao.mapper.BookMapper">
+
+
+    <!--实体类名和数据库列名不一样时可以用别名进行映射，不常用-->
+    <select id="getAll--" resultType="book">
+        select bookid as id,bookname as name
+        from book
+    </select>
+
+    <!--实体类名和数据库列名不一样时，使用resultMap-->
+    <resultMap id="bookmap" type="book">
+        <!--主键绑定-->
+        <id property="id" column="bookid"></id>
+        <!--非主键绑定-->
+        <result property="name" column="bookname"></result>
+    </resultMap>
+    <select id="getAll" resultMap="bookmap">
+        select bookid,bookname
+        from book
+    </select>
+</mapper>

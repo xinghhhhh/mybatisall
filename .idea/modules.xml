@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/mybatis_001_student/mybatis_001_student.iml" filepath="$PROJECT_DIR$/mybatis_001_student/mybatis_001_student.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis_002_users/mybatis_002_users.iml" filepath="$PROJECT_DIR$/mybatis_002_users/mybatis_002_users.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_003_dynamicsql/mybatis_003_dynamicsql.iml" filepath="$PROJECT_DIR$/mybatis_003_dynamicsql/mybatis_003_dynamicsql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_004_onemany/mybatis_004_onemany.iml" filepath="$PROJECT_DIR$/mybatis_004_onemany/mybatis_004_onemany.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_005_cache/mybatis_005_cache.iml" filepath="$PROJECT_DIR$/mybatis_005_cache/mybatis_005_cache.iml" />
     </modules>
   </component>
 </project>

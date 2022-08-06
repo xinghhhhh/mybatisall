@@ -5,5 +5,11 @@
     <file url="file://$PROJECT_DIR$/mybatis_001_student/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis_002_users/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis_002_users/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis_003_dynamicsql/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis_003_dynamicsql/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis_004_onemany/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis_004_onemany/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis_005_cache/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis_005_cache/src/main/resources" charset="UTF-8" />
   </component>
 </project>

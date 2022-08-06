@@ -5,10 +5,13 @@
       <list>
         <option value="$PROJECT_DIR$/mybatis_001_student/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis_002_users/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis_003_dynamicsql/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis_004_onemany/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis_005_cache/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="azul-17" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

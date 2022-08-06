@@ -6,13 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mybatis_001_student" />
+        <module name="mybatis_003_dynamicsql" />
         <module name="mybatis_002_users" />
+        <module name="mybatis_004_onemany" />
+        <module name="mybatis_001_student" />
+        <module name="mybatis_005_cache" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mybatis_001_student" target="17" />
       <module name="mybatis_002_users" target="17" />
+      <module name="mybatis_003_dynamicsql" target="17" />
+      <module name="mybatis_004_onemany" target="17" />
+      <module name="mybatis_005_cache" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
