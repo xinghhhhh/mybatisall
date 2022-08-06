@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinghao.mapper.OrdersMapper">
+
+    <resultMap id="ordersmap" type="orders">
+
+        <!--多对一的情况-->
+        <!--主键绑定-->
+        <id property="id" column="oid"></id>
+        <!--非主键绑定-->
+        <result property="orderNumber" column="orderNumber"></result>
+        <result property="orderPrice" column="orderPrice"></result>
+        <!--多出来的查询内容绑定，用javaType（区别一对多时用的ofType）-->
+        <association property="customer" javaType="customer">
+            <id property="id" column="cid"></id>
+            <result property="name" column="name"></result>
+            <result property="age" column="age"></result>
+        </association>
+    </resultMap>
+    <select id="getById" parameterType="int" resultMap="ordersmap">
+        select o.id oid,orderNumber,orderPrice,customer_id,c.id cid,name,age
+        from orders o inner join customer c on o.customer_id = c.id
+        where o.id=#{id}
+    </select>
+</mapper>

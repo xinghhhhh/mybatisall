@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinghao.mapper.UsersMapper">
+    <!--
+    //查询全部用户信息
+    List<Users> getAll();
+    -->
+    <select id="getAll" resultType="users">
+        select id,username,birthday,sex,address
+        from users
+    </select>
+
+    <select id="getById" parameterType="int" resultType="users">
+        select id,username,birthday,sex,address
+        from users
+        where id = #{id}
+    </select>
+
+    <update id="update" parameterType="users" >
+        update users set username=#{userName},birthday=#{birthday},sex=#{sex},address=#{address}
+        where id = #{id}
+    </update>
+    
+    <select id="getByName" parameterType="string" resultType="users">
+        select id,username,birthday,sex,address
+        from users
+        where username like '%${name}%'
+    </select>
+
+    <!--上面用的${}进行拼接，有注入风险，用下面的方式进行拼接！！！（规定）-->
+    <select id="getByName2" parameterType="string" resultType="users">
+        select id,username,birthday,sex,address
+        from users
+        where username like concat('%',#{name},'%')
+    </select>
+
+    <insert id="insert" parameterType="users">
+        insert into users (username,birthday,sex,address) values (#{userName},#{birthday},#{sex},#{address})
+    </insert>
+
+    <delete id="delete" parameterType="int" >
+        delete from users where id = #{id}
+    </delete>
+
+
+    <!--如果参数超过一个，parameterType不写-->
+    <select id="getByNameOrAddress"  resultType="users">
+        select id,username,birthday,sex,address
+        from users
+        where ${columnName} like concat('%',#{columnValue},'%')
+    </select>
+
+    <insert id="insert2" parameterType="users">
+        <selectKey keyProperty="id" resultType="int" order="AFTER">
+            select last_insert_id()
+        </selectKey>
+        insert into users (username,birthday,sex,address) values (#{userName},#{birthday},#{sex},#{address})
+    </insert>
+
+
+</mapper>
